@@ -1,78 +1,61 @@
-<?php /* Template Name: abouttme*/ ?>
-<?php get_header(); ?>
+<?php get_header();?>
 
-   <!-- Page Header -->
+		<div id="colorlib-main">
+			<section class="ftco-section-no-padding bg-light">
+				<div class="hero-wrap">
+					<div class="overlay"></div>
+					<div class="d-flex align-items-center js-fullheight">
+						<div class="author-image text img d-flex">
+							<section class="home-slider js-fullheight owl-carousel">
+					      <div class="slider-item js-fullheight" style="background-image: url(<?php echo get_theme_file_uri('images/author.jpg')?>);">
+					      </div>
 
-   <?php
-   if ( have_posts() ) : while ( have_posts() ) : the_post();
-    if ( has_post_thumbnail() ) {
-   $feat_image_url = wp_get_attachment_url( get_post_thumbnail_id() );
-   echo '<section id="services" class="service-item" style="background-image:url('.$feat_image_url.');">';
-        }
-         endwhile;
-            endif;
-            ?>
+					      <div class="slider-item js-fullheight" style="background-image:url(<?php echo get_theme_file_uri('images/author-2.jpg')?>);">
+					      </div>
+					    </section>
+						</div>
+						<div class="author-info text p-3 p-md-5">
+							<div class="desc">
+								<span class="subheading">Hello! I'm</span>
+								<h1 class="big-letter">Louie Smith</h1>
+								<h1 class="mb-4"><span>Louie Smith</span> A Photographer. <span>I Capture Life</span></h1>
+								<p class="mb-4">I am A Photographer from America Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+								<h3 class="signature h1">Louie Smith</h3>
+								<ul class="ftco-social mt-3">
+		              <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+		              <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+		              <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+		            </ul>
+	            </div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="ftco-section instagram">
+				<div class="container">
+					<div class="row justify-content-center mb-2 pb-3">
+	          <div class="col-md-7 heading-section heading-section-2 text-center ftco-animate">
+	            <h2 class="mb-4">Follow me on Instagram</h2>
+	          </div>
+	        </div>
 
-   <div class="container">
-     <div class="center wow fadeInDown">
+<?php if(have_posts()):
+  while(have_posts()):
+    the_post();?>
 
-          <?php if (have_posts()) :
-                      while (have_posts()) :
-                           the_post(); ?>
-          <h2><?php the_title(); ?></h2>
-          <h3 class="post-meta"  style="text-align:center;color:#f9eaf9">Posted by
-                                       <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php the_author(); ?></a> on <?php the_date(); ?>    </h3>
+					<div class="row no-gutters">
+		        <div class="col-sm-12 col-md ftco-animate">
+		          <a href="<?php echo get_theme_file_uri('images/image_1.jpg');?> " class="insta-img image-popup" style="background-image: url(<?php echo get_theme_file_uri('images/image_1.jpg')?>);">
+                <div class="icon d-flex justify-content-center">
+		              <span class="icon-instagram align-self-center"></span>
+		            </div>
+		          </a>
+		        </div>
+		      </div>
 
-                  <?php endwhile;
-                endif; ?>
-</div>
+<?php endwhile;
+endif;?>
+				</div>
+			</section>
 
-
-           </div>
-
-</section>
-
-   <!-- Main Content -->
-  <section id="feature" class="transparent-bg">
-   <div class="container" >
-     <div class="get-started  wow fadeInDown">
-            <div class="col-lg-8 col-md-10 mx-auto" style=" margin-left:18%;margin-right: 0px;" >
-                <?php if (have_posts()) :
-                      while (have_posts()) :
-                           the_post(); ?>
-                    <div class="post-preview">
-                            <h3 class="post-subtitle" >
-                                  <?php the_content(); ?>
-                           </h3>
-
-                  <?php endwhile;
-                endif; ?>
-          </div>
-                </div>
-                    <br>
-            <div class="clearfix" >
-         </div>
-              <a class="btn btn-primary float-right" href="#" style=" margin-left:45%;
-   margin-right: 0px;">返回</a>
-                </div>
-
-       </div>
-
-   </section>
-
-            <!-- Pager -->
-
-   <hr>
-
-<div class="container" >
-
-<?php if (have_posts()) :
-                      while (have_posts()) :
-                           the_post(); ?>
-    <?php if ( comments_open() || get_comments_number() ) :
-                    comments_template();
-                endif; ?>
-   <?php endwhile;
-                endif; ?>
-</div>
-   <?php get_footer(); ?>
+<?php get_footer();?>

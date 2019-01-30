@@ -67,9 +67,9 @@
 <div class="container" >
 
 <?php if (have_posts()) :
-                      while (have_posts()) :
-                           the_post(); ?>
-    <?php if ( comments_open() || get_comments_number() ) :
+        while (have_posts()) :
+        the_post(); ?>
+<?php if ( comments_open() || get_comments_number() ) :
                     comments_template();
                 endif; ?>
    <?php endwhile;
