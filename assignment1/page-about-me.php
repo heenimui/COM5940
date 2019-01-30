@@ -36,8 +36,7 @@
   <section id="feature" class="transparent-bg">
    <div class="container" >
      <div class="get-started  wow fadeInDown">
-            <div class="col-lg-8 col-md-10 mx-auto" style=" margin-left:18%;
-   margin-right: 0px;" >
+            <div class="col-lg-8 col-md-10 mx-auto" style=" margin-left:18%;margin-right: 0px;" >
                 <?php if (have_posts()) :
                       while (have_posts()) :
                            the_post(); ?>
