@@ -58,3 +58,5 @@
 				</div>
 			</div>
 		</aside>
+
+<?php wp_footer();?> //於wordpress顯示toggle airpress debugger
