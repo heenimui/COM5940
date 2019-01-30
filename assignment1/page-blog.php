@@ -72,14 +72,7 @@
             <ul class="categories">
               <li><a href="#"><?php the_category();?>
                 <span><?php echo get_post_meta( $post->ID, 'incr_number', true );?></span></a></li>
-              <li><a href="#"><?php the_category();?>
-                <span><?php echo get_post_meta( $post->ID, 'incr_number', true );?></span></a></li>
-              <li><a href="#"><?php the_category();?>
-                <span><?php echo get_post_meta( $post->ID, 'incr_number', true );?></span></a></li>
-              <li><a href="#"><?php the_category();?>
-                <span><?php echo get_post_meta( $post->ID, 'incr_number', true );?></span></a></li>
-              <li><a href="#"><?php the_category();?>
-                <span><?php echo get_post_meta( $post->ID, 'incr_number', true );?></span></a></li>
+
             </ul>
           </div>
 
@@ -95,28 +88,14 @@
                 <div class="meta">
                   <div><a href="#"><span class="icon-calendar"></span> <?php the_date();?></a></div>
                   <div><a href="#"><span class="icon-person"></span> <?php the_author();?></a></div>
-                  <div><a href="#"><span class="icon-chat"></span> <?php get_comments_number();?></a></div>
+                  <div><a href="#"><span class="icon-chat"></span> <?php echo get_comments_number();?></a></div>
                 </div>
               </div>
             </div>
 
           </div>
 
-          <div class="sidebar-box ftco-animate">
-            <h3 class="sidebar-heading">Tag Cloud</h3>
-            <ul class="tagcloud">
-              <a href="#" class="tag-cloud-link">animals</a>
-              <a href="#" class="tag-cloud-link">human</a>
-              <a href="#" class="tag-cloud-link">people</a>
-              <a href="#" class="tag-cloud-link">cat</a>
-              <a href="#" class="tag-cloud-link">dog</a>
-              <a href="#" class="tag-cloud-link">nature</a>
-              <a href="#" class="tag-cloud-link">leaves</a>
-              <a href="#" class="tag-cloud-link">food</a>
-            </ul>
-          </div>
-
-          <div class="sidebar-box subs-wrap img" style="background-image: url(images/bg_1.jpg);">
+          <div class="sidebar-box subs-wrap img" style="background-image: url(<?php echo get_theme_file_uri('images/bg_1.jpg')?>);">
             <div class="overlay"></div>
             <h3 class="mb-4 sidebar-heading">Newsletter</h3>
             <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia</p>
@@ -131,12 +110,9 @@
           <div class="sidebar-box ftco-animate">
             <h3 class="sidebar-heading">Archives</h3>
             <ul class="categories">
-              <li><a href="#">Decob14 2018 <span>(10)</span></a></li>
-              <li><a href="#">September 2018 <span>(6)</span></a></li>
-              <li><a href="#">August 2018 <span>(8)</span></a></li>
-              <li><a href="#">July 2018 <span>(2)</span></a></li>
-              <li><a href="#">June 2018 <span>(7)</span></a></li>
-              <li><a href="#">May 2018 <span>(5)</span></a></li>
+              <li><a href="#"><?php echo get_the_date();?>
+                <span><?php echo get_post_meta( $post->ID, 'incr_number', true );?></span></a></li>
+
             </ul>
           </div>
         <?php endwhile;
