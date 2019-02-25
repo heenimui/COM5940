@@ -9,7 +9,7 @@ app.config["DEBUG"] = False
 def home():
     return render_template('index.html')
 
-@app.route("/index_chart")
+@app.route("/chart")
 def chart():
     r = requests.get('https://api.airtable.com/v0/appAIHCBijmOXqMWG/membership_points?api_key=keyHwnj1ElCshCfmN&sortField=_createdTime&sortDirection=desc')
     dict1 = r.json()
@@ -23,7 +23,7 @@ def chart():
     for item in dataset:
         name_list.append(item.get('name'))
         point_list.append(item.get('point'))
-    return render_template('index.html', entries = zip(name_list, point_list))
+    return render_template('chart.html', entries = zip(name_list, point_list))
 
 if __name__ == '__main__':
    app.run(debug = True)
