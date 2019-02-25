@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<title>COMM5940 Problem Sets</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8">
+
+	<!-- Font -->
+
+	<link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700%7CAllura" rel="stylesheet">
+
+	<!-- Stylesheets -->
+
+	<link href="../static/common-css/bootstrap.css" rel="stylesheet">
+
+	<link href="../static/common-css/ionicons.css" rel="stylesheet">
+
+	<link href="../static/common-css/fluidbox.min.css" rel="stylesheet">
+
+	<link href="../static/css/styles.css" rel="stylesheet">
+
+	<link href="../static/css/responsive.css" rel="stylesheet">
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.1.29/c3.css" rel="stylesheet" type="text/css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.6.12/c3.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.9.1/d3.js"></script>
+
+</head>
+<body>
+
+	<section class="intro-section">
+		<div class="container">
+			<div class="starter-template">
+			    <h1>Flask-Chart Display</h1>
+			    <p>Generated dataTable and C3 chart using back-end Python/Flask codes.</p>
+			</div>
+			<div id="chart"></div>
+		</div><!-- container -->
+	</section><!-- experience-section -->
+<hr>
+End of Problem set 3
+
+
+	<footer>
+		<p class="copyright">
+			<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="ion-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+		</p>
+
+
+	</footer>
+
+
+	<!-- SCIPTS -->
+
+	<script src="../static/common-js/jquery-3.2.1.min.js"></script>
+	<script src="../static/common-js/tether.min.js"></script>
+	<script src="../static/common-js/bootstrap.js"></script>
+	<script src="../static/common-js/isotope.pkgd.min.js"></script>
+	<script src="../static/common-js/jquery.waypoints.min.js"></script>
+	<script src="../static/common-js/progressbar.min.js"></script>
+	<script src="../static/common-js/jquery.fluidbox.min.js"></script>
+	<script src="../static/common-js/scripts.js"></script>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js"></script>
+	<script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+
+	<script>
+      $(document).ready(function(){
+        var chart = c3.generate({
+                    data: {
+                        columns: [{% for name,point in entries %}
+                                    ['{{name}}',{{point}}],
+                                  {% endfor %}
+                                 ],
+                       type : 'bar',
+                       labels: true,
+                     },
+                    axis: {
+                      x: {label: 'name'},
+                      y: {label: 'point'}
+                    },
+                    bar: {
+                        title: "Points for Each Member:",
+                    },
+                    tooltip: {
+                        show: false,
+                    }
+                }); // end c3.generate
+      }); // end document ready
+    </script>
+
+</body>
+</html>
